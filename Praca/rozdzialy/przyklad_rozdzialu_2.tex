@@ -24,21 +24,21 @@ Vestibulum lorem elit, ornare vitae ultrices non, rhoncus eu elit. Vestibulum et
 \centering
     \begin{tabular}{|l|l|c|}
     \hline
-    \multicolumn{1}{|l|}{\textbf{Lp.}} & \multicolumn{1}{l|}{\textbf{Parametr}} & \multicolumn{1}{c|}{\textbf{Wartoœæ}} \\
+    \multicolumn{1}{|l|}{\textbf{Lp.}} & \multicolumn{1}{l|}{\textbf{Parametr}} & \multicolumn{1}{c|}{\textbf{Warto¶æ}} \\
     \hline
        1.   & Napiêcie zasilania [V] & 12  \\
     \hline
-       2.   &  Prêdkoœæ obrotowa [obr/min]& 200\\
+       2.   &  Prêdko¶æ obrotowa [obr/min]& 200\\
     \hline
        3.  & Moment obrotowy [Nm]   & 0.8 \\
     \hline
-       4.  & Maks. pr¹d pracy [A]      &  0.8 \\
+       4.  & Maks. pr±d pracy [A]      &  0.8 \\
     \hline
-       5.  & Œrednica wa³u [mm]     &  8 \\
+       5.  & ¶rednica wa³u [mm]     &  8 \\
     \hline
        6.  & Rodzaj czujnika     &  Inkrementalny   \\
     \hline
-       7.  & Rozdzielczoœæ enkodera [imp/obr]   &  75 \\
+       7.  & Rozdzielczo¶æ enkodera [imp/obr]   &  75 \\
     \hline
     \end{tabular}
   \label{silnik_skret}
@@ -69,13 +69,13 @@ for n = 1 : 4
         Imp_1_100(n,j) = (R1*R2*C2*i*j*2*pi + R1 + R2);
     end
     
-    % Zmiana wartoœci  
+    % Zmiana warto¶ci  
     
     if log(abs(Imp_1_100(n,100))) - log(Rr) <= 2
         Rr = Rr/10;
     end
     
-    RT(n) = Rr;  % Przypisanie wartoœci
+    RT(n) = Rr;  % Przypisanie warto¶ci
 end
 \end{lstlisting}
 

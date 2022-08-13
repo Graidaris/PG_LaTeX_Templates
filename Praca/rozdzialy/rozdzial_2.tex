@@ -1,0 +1,22 @@
+\chapter{Metody wyznaczenia lokalizacji} 
+
+
+Ogólnie kilka s³ow
+
+\section{Minimalnie GEO-referencyjna WiFi+GSM metoda oparta na odciskach palców}
+    Metoda wyznaczenia lokalizacji bazuj±ca na odcisach palców polegaj±cy na informacjach WiFi i GSM zapewnia wystarczaj±c± dok³adno¶æ lokalizacji dla wielu aplikacji telefonii komórkowej. Wiêkszo¶æ istniej±cych podej¶æ wymaga zestawu szkoleniowego sk³adaj±cego siê z geo-odwo³uj±cych siê odcisków palców, aby zbudowaæ referencyjn± bazê danych. W dokumencie\cite{dactyloc} zosta³a zaproponowana pó³-nadzorowana metoda pobierania odcisków palców WiFi+GSM, w której tylko niewielka czê¶æ wszystkich odcisków palców musi byæ okre¶lona geograficznie. Takie podej¶cie umo¿liwia indeksowanie obszarów w przypadku braku odbioru GPS, jak czêsto spotykane w przestrzeniach miejskich i pomieszczeniach bez rêcznego etykietowania odcisków palców. Metoda wykorzystuje cechê, ¿e podobieñstwo dwóch odcisków palców koreluje z odleg³o¶ci± miêdzy ich odpowiednim po³o¿eniem. Dziêki zastosowaniu skalowania wielowymiarowego, estymacja topologiczna jest generowana i za pomoc± ma³ego zestawu geo-odwo³uj±cych siê odcisków palców zakotwiczonych w lokalizacjach fizycznych. Ocena za pomoc± zestawu danych w skali miejskiej pokazuje, ¿e mo¿emy zlokalizowaæ urz±dzenie mobilne z median± b³êdu 30m. podczas gdy zwykle wszystkie odciski palców zestawu szkoleniowego musz± byæ odwo³ane geograficznie, z proponowan± metod± tylko 8\% wymaga odniesienia geograficznego. Ponadto pokazujemy, ¿e b³±d lokalizacji zmniejsza siê wraz z dodawaniem nowych odcisków palców i zbli¿a siê do dok³adno¶ci porównywalnej z powi±zan± prac±.
+
+\subsection{Opis metody}
+
+    Metoda sk³ada siê z trzech kroków:
+\begin{enumerate}
+    \item Budowanie topologii odniesienia z zestawu odcisków palców treningowych.
+    \item Zapewnienie estymacji lokalizacji dla nowych odcisków palców przy u¿yciu topologii odniesienia.
+    \item W³±czenie nowego odcisku palca do topologii referencyjnej w celu jej udoskonalenia i rozszerzenia.
+\end{enumerate}
+
+Do generowania topologii odniesienia, musz± byæ zebrane zestawy danych zawieraj±ce dane wszystkich komórek GSM i punktów dostêpu WiFi. Potem spo¶ród wszystkich odcisków palców siê oblicza parow± miarê podobieñstwa. Niewiarygodne miary podobieñstwa s± usuwane podczas procesu przycinania. Dziêki zastosowaniu MDS(Skalowanie Wielowymiarowe) mo¿na wygenerowaæ estymacjê topologiczn±. W tym celu MDS stara siê optymalnie umie¶ciæ odciski palców w konfiguracji dwuwymiarowej, która zachowuje relacje podobieñstwa miêdzy parami odcisków palców. Przy u¿yciu minimalnego zestawu georeferencyjnych odcisków palców s³u¿±cych jako punkty kontrolne okre¶la siê nieliniowe mapowanie lokalizacji geograficznych. Aby uzyskaæ estymacjê lokalizacji nowego odcisku palca, ta sama procedura jest stosowana na podzbiorze grafu. Oprócz uzyskania estymacji lokalizacji, odcisk palca mo¿na równie¿ dodaæ do listy odcisków palców topologii odniesienia, która nastêpnie zostaje udoskonalona i mo¿e rosn±æ.
+
+\subsection{Generowanie topologii odniesienia}
+
+alal 

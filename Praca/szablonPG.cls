@@ -43,7 +43,7 @@
 
 \RequirePackage{polski}
 \RequirePackage[T1]{fontenc}
-\RequirePackage[cp1250]{inputenc}       % kodowanie windows1250
+\RequirePackage[latin2]{inputenc}       % kodowanie windows1250
 
 %--------------------------------------------------------------------
 % Podstawowa czcionka - Helvetica (Zamiennik dla czcionki Arial)
